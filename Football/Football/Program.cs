@@ -1,43 +1,14 @@
-﻿interface ISpeakable
-{ 
-    public void SaySpeech();
-}
-
-public abstract class FootballMatchParticipant : ISpeakable
-{
-    public abstract void SaySpeech();
-    public abstract void ShowStatistics();
-
-}
-
-public class Footballer : FootballMatchParticipant
-{
-    public override void SaySpeech()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void ShowStatistics()
-    {
-        throw new NotImplementedException();
-    }
-}
-abstract class VoiceAssistant : ISpeakable
-{
-    public abstract void SaySpeech();
-}
-
-
-
-class Program
+﻿class Program
 {
     static void Main(string[] args)
     {
-        FootballMatchParticipant participant = new FootballMatchParticipant();
-        
-        
-        
-        
-        
+        Footballer Edik = new Footballer("Eduard", "Mursalimov");
+        Referee referee = new Referee("Referee of RFPL");
+        Fan fan = new Fan("FC Slonyary");
+        Edik.Score();
+        fan.SaySpeech();
+        Edik.ShowStatistics();
+        referee.ShowCard(Edik);
+        Edik.ShowStatistics();
     }
 }

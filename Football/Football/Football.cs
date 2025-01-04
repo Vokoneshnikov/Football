@@ -3,6 +3,13 @@ interface ISpeakable
     public void SaySpeech();
 }
 
+abstract class VoiceAssistant : ISpeakable
+{
+    public void SaySpeech()
+    {
+        throw new NotImplementedException();
+    }
+}
 abstract class FootballMatchParticipant : ISpeakable
 {
     public abstract void ShowStatistics();
@@ -87,6 +94,7 @@ class Referee : FootballMatchParticipant
     }
     private int _showedCardsAmount = 0;
     public int ShowedCardsAmount {get { return _showedCardsAmount; }set{_showedCardsAmount = value; } }
+    
     private string _name;
     public string Name {get { return _name; }}
 
@@ -112,6 +120,7 @@ class Fan : FootballMatchParticipant
 
     private string _supportedTeamName;
     public string SupportedTeamName {get { return _supportedTeamName;} set{_supportedTeamName = value; } }
+    
     private int _chantsAmount = 0;
     public int ChantsAmount {get { return _chantsAmount; }set{_chantsAmount = value; } }
     
